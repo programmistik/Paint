@@ -23,6 +23,7 @@ namespace Paint
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModel();
         }
     }
 }

@@ -5,8 +5,282 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Paint"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        x:Name="myWindow"
+        Title="Paint" Height="550" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />           
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Ribbon  Foreground="#333333" 
+                 Margin="0,-22,0,0">
+
+            <RibbonTab Header="Home">
+
+                <RibbonGroup Header="Tools" Width="100">
+                    <StackPanel Margin="0,0,0,-57">                     
+                        
+                        <StackPanel Orientation="Horizontal">
+                            <RibbonButton x:Name="btnPencil" 
+                                          ToolTip="Pencil"
+                                          LargeImageSource="/Paint;component/Images/Pencil-icon.png" 
+                                          Command="{Binding PencilCommand}" 
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnEraser" 
+                                          ToolTip="Clear all"
+                                          LargeImageSource="/Paint;component/Images/Eraser-icon.png" 
+                                          Command="{Binding EraserCommand}" 
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                                                       
+                        </StackPanel>
+                    </StackPanel>
+                </RibbonGroup>
+                <RibbonGroup Header="Size" Width="80">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <RibbonButton x:Name="btn1" 
+                                          ToolTip="1x"
+                                          Width="22"
+                                          Height="22" 
+                                          SmallImageSource="/Paint;component/Images/Numbers-1-icon.png"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding BrushSize1Command}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btn3" 
+                                          ToolTip="3x"
+                                          Width="22"
+                                          Height="22" 
+                                          SmallImageSource="/Paint;component/Images/Numbers-3-icon.png"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding BrushSize3Command}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btn5" 
+                                          ToolTip="5x"
+                                          Width="22"
+                                          Height="22" 
+                                          SmallImageSource="/Paint;component/Images/Numbers-5-icon.png"
+                                          HorizontalAlignment="Center" 
+                                          Command="{Binding BrushSize5Command}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            
+                        </StackPanel>
+                    </StackPanel>
+                </RibbonGroup>
+                <RibbonGroup Header="Colors" Width="380">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+
+                            <RibbonButton x:Name="btnBlack" 
+                                          ToolTip="Black"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="Black"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding BlackCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnGray" 
+                                          ToolTip="Gray"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="Gray"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding GrayCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnDarkRed" 
+                                          ToolTip="Dark red"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="DarkRed"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding DarkRedCommand}"
+                                          CommandParameter="Red"/>
+                            <RibbonButton x:Name="btnRed"  
+                                          ToolTip="Red"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="Red"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding RedCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnOrange" 
+                                          ToolTip="Orange"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="Orange"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding OrangeCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnYellow"  
+                                          ToolTip="Yellow"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="Yellow"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding YellowCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnGreen"  
+                                          ToolTip="Green"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="Green"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding GreenCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnTurquoise" 
+                                          ToolTip="Turquoise"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="Turquoise"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding TurquoiseCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnIndigo"  
+                                          ToolTip="Indigo"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="Indigo"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding IndigoCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnPurple" 
+                                          ToolTip="Purple"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="Purple"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding PurpleCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+
+                            <RibbonButton x:Name="btnWhite"
+                                          ToolTip="White"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="White"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding WhiteCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnLightGray" 
+                                          ToolTip="Light gray"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="LightGray"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding LightGrayCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnBrown"  
+                                          ToolTip="Brown"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="Brown"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding BrownCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnPink"  
+                                          ToolTip="Pink"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="Pink"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding PinkCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnGold"  
+                                          ToolTip="Gold"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="Gold"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding GoldCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnLightYellow"  
+                                          ToolTip="Light yellow"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="LightYellow"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding LightYellowCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnLime"  
+                                          ToolTip="Lime"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="Lime"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding LimeCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnLightBlue"  
+                                          ToolTip="Light blue"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="LightBlue"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding LightBlueCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnBlue"  
+                                          ToolTip="Steel blue"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="SteelBlue"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding SteelBlueCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                            <RibbonButton x:Name="btnLavender" 
+                                          ToolTip="Lavender"
+                                          Width="30"
+                                          Height="30" 
+                                          Background="Lavender"
+                                          HorizontalAlignment="Left" 
+                                          Command="{Binding LavenderCommand}"
+                                          CommandParameter="{Binding ElementName=myWindow}"/>
+                        </StackPanel>
+
+                        
+                    </StackPanel>
+                        <RibbonButton x:Name="btnColor" 
+                                      Margin="5,0,0,0"
+                                      ToolTip="Current color"
+                                      Width="50"
+                                      Height="60" 
+                                      Background="Black"
+                                      HorizontalAlignment="Left">
+                            <RibbonButton.Template>
+                                <ControlTemplate TargetType="{x:Type RibbonButton}">
+                                    <Border Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                                        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="{TemplateBinding Padding}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="Button.IsFocused" Value="True">
+                                            <Setter TargetName="Border" Property="Background" Value="Black" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </RibbonButton.Template>
+                        </RibbonButton>
+                    </StackPanel>
+                </RibbonGroup>
+                <RibbonGroup Header="Recognize">
+                <RibbonButton x:Name="btnRecognize" 
+                              ToolTip="Handwriting Recognition"
+                              LargeImageSource="/Paint;component/Images/Rec-icon.png" 
+                              Command="{Binding RecognizeCommand}" 
+                              CommandParameter="{Binding ElementName=myWindow}"/>
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+
+        <InkCanvas HorizontalAlignment="Stretch" 
+                   Grid.Row="1"
+                   Margin="9,9,9,9" 
+                   Name="myInkCanvas" 
+                   VerticalAlignment="Stretch"                    
+                    />
+        <TextBox x:Name="TextResult"
+                 Grid.Row="2" 
+                 FontSize="20"
+                 Margin="9,0,9,9" />
     </Grid>
 </Window>
